@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+img{
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+}
+/* ---- header styling ------ */
+header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.79);
+    backdrop-filter: blur(20px);
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.4rem;
+    z-index: 10;
+}
+.wrapper{
+    max-width: 1260px;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+.header_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+nav ul li{
+    list-style: none;
+    /* background-color: blue; */
+}
+ul li a{
+    position: relative;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 600;
+}
+
+/* --- cursor styling --- */
+.cursor{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 99;
+}
+ul li:hover .cursor{
+    transform: scale(4);
+}
+.logo:hover ~ .cursor{
+    transform: scale(4);
+}
+
+.btn{
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s ease-out;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+nav .hamburger_menu{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+}
+nav .hamburger_menu::before{
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 2.5px;
+    background-color: white;
+    transform: translateY(-9px);
+    transition: 0.3s ease-in-out;
+    
+}
+nav.active .hamburger_menu::before{
+    transform: rotate(45deg);
+    
+}
+nav.active .hamburger_menu::after{
+    transform: rotate(-45deg);
+    box-shadow: 0 0 0 black;
+}
+nav .hamburger_menu::after{
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 2.5px;
+    background-color: white;
+    transform: translateY(9px);
+    box-shadow: 0 -9px 0 white;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* --- section container ----- */
+section{
+    width: 100%;
+    /* background-color: rgba(255, 0, 0, 0.322); */
+    padding: 1rem 1.4rem;
+}
+.container{
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* min-height: 60vh; */
+    /* background-color: red; */
+}
+/* .container .f_content{
+} */
+.f_content p{
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+.f_content h1{
+    font-size: 3rem;
+    line-height: 3.2rem;
+    
+}
+.s_content p{
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+.s_content span{
+    font-size: 1rem;
+    color: #919191;
+    letter-spacing: 1px;
+}
+
+
+/* ------ second section styling ---- workinginfo wrapper */
+.working_info{
+    display: flex;
+    flex-direction: column;
+    gap: 8rem 0;
+}
+.cards{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 0;
+}
+
+.card > span{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card > span > i{
+    font-size: 2rem;
+    font-weight: 200;
+}
+.card > p > span{
+    letter-spacing: 1px;
+    color: #dadada;
+}
+.card img{
+    border-radius: 30px;
+}
+
+.working_info .working_text p{
+    font-size: 1.5rem;
+}
+
+.working_info .banner{
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 2rem;
+}
+.working_info .banner > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+
+/* ---- footer styling ----- */
+footer{
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1.4rem;
+}
+
+.footer_container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem 0;
+}
+.first_content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.first_content .f_info{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 2rem;
+}
+.f_info > p{
+    font-size: 1.4rem;
+}
+
+.s_info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.s_info > p{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgb(233, 233, 233);
+    font-weight: 600;
+}
+
+.s_info .footer_items{
+    display: flex;
+    gap: 5rem;
+}
+.footer_container ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.second_content > p{
+    font-size: 13px;
+    color: #919191;
+}
+.second_content > p > span{
+    color: white;
+    font-size: 16px;
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
